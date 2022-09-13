@@ -307,7 +307,7 @@ fn process_execution_response(
     let ExecutionResponse { response, context } = execution_response;
 
     let (parts, response_stream) = response.into_parts();
-    let stream = response_stream.map(move |mut response: Response| {
+    /*let stream = response_stream.map(move |mut response: Response| {
         let has_next = response.has_next.unwrap_or(true);
         tracing::debug_span!("format_response").in_scope(|| {
             plan.query.format_response(
@@ -361,20 +361,11 @@ fn process_execution_response(
                     .build()
             }
         }
-    });
+    });*/
 
     Ok(SupergraphResponse {
         context,
-        response: http::Response::from_parts(
-            parts,
-            if can_be_deferred {
-                stream.left_stream()
-            } else {
-                stream.right_stream()
-            }
-            .in_current_span()
-            .boxed(),
-        ),
+        response: http::Response::from_parts(parts, response_stream.in_current_span().boxed()),
     })
 }
 
