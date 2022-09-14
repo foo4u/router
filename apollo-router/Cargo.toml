@@ -72,7 +72,7 @@ itertools = "0.10.4"
 jsonschema = { version = "0.16.0", default-features = false }
 lazy_static = "1.4.0"
 libc = "0.2.132"
-lru = "0.7.8"
+lru = "0.8.0"
 mediatype = "0.19.9"
 mockall = "0.11.2"
 miette = { version = "5.3.0", features = ["fancy"] }
@@ -121,8 +121,8 @@ opentelemetry-prometheus = "0.10.0"
 paste = "1.0.9"
 pin-project-lite = "0.2.9"
 prometheus = "0.13"
-prost = "0.9.0"
-prost-types = "0.9.0"
+prost = "0.11.0"
+prost-types = "0.11.1"
 rand = "0.8.5"
 rhai = { version = "1.10.0", features = ["sync", "serde", "internals"] }
 regex = "1.6.0"
@@ -139,14 +139,14 @@ serde = { version = "1.0.144", features = ["derive", "rc"] }
 serde_json_bytes = { version = "0.2.0", features = ["preserve_order"] }
 serde_json = { version = "1.0.85", features = ["preserve_order"] }
 serde_urlencoded = "0.7.1"
-serde_yaml = "0.8.26"
+serde_yaml = "0.9.13"
 static_assertions = "1.1.0"
 sys-info = "0.9.1"
 thiserror = "1.0.34"
 tokio = { version = "1.21.0", features = ["full"] }
 tokio-stream = { version = "0.1.9", features = ["sync", "net"] }
 tokio-util = { version = "0.7.4", features = ["net", "codec"] }
-tonic = { version = "0.6.2", features = ["transport", "tls"] }
+tonic = { version = "0.8.1", features = ["transport", "tls"] }
 tower = { version = "0.4.13", features = ["full"] }
 tower-http = { version = "0.3.4", features = [
     "trace",
@@ -220,7 +220,7 @@ reqwest = { version = "0.11.11", default-features = false, features = [
     "rustls-tls",
     "blocking",
 ] }
-tonic-build = "0.6.2"
+tonic-build = "0.8.0"
 
 
 [[test]]
