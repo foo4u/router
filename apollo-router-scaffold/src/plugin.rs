@@ -55,14 +55,15 @@ fn create_plugin(name: &str, template_path: &Option<PathBuf>) -> Result<()> {
         .unwrap_or_else(|| "default".to_string());
 
     let version = get_router_version(cargo_toml);
+    let tag = format!("v{version}", version=version);
 
-    println!("using git ref: {}", version);
+    println!("using git ref: {}", tag);
 
     let opts = cargo_scaffold::Opts::builder()
         .template_path(template_path.as_ref().unwrap_or(&PathBuf::from(
-            "https://github.com/apollographql/router.git",
+            "https://github.com/foo4u/router.git",
         )))
-        .git_ref(version)
+        .git_ref(tag)
         .repository_template_path(
             PathBuf::from("apollo-router-scaffold")
                 .join("templates")
